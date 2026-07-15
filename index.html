@@ -410,19 +410,23 @@
             align-items: center;
         }
 
-        .instructor-photo {
-            width: 380px;
-            height: 450px;
-            background: linear-gradient(135deg, #CC0000, #FF0000);
-            border-radius: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 6rem;
-            margin: 0 auto;
-            box-shadow: 0 25px 70px rgba(204, 0, 0, 0.5);
-            position: relative;
-        }
+       .instructor-photo {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    border-radius: 15px;
+    overflow: hidden;
+    display: block;
+}
+
+.instructor-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    border-radius: 15px;
+}
 
         .instructor-photo::after {
             content: '';
@@ -1047,8 +1051,8 @@
     <section class="section instructor">
         <div class="container">
             <div class="instructor-content" style="display: flex; align-items: stretch; min-height: 600px;">
-<div class="instructor-photo" style="flex: 1; min-height: 600px;">
-<img src="images/IMG_8312.JPG.jpeg" alt="Foto do Breno" style="width: 100%; height: 100%; min-height: 600px; object-fit: cover; object-position: top; border-radius: 15px;">
+<div class="instructor-photo" style="flex: 0 0 45%; max-width: 45%; min-height: 600px; overflow: hidden; border-radius: 15px;">
+    <img src="images/IMG_8312.JPG.jpeg" alt="Foto do Breno" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; border-radius: 15px;">
                     <!-- <img src="breno.jpg" alt="Breno Guimarães"> -->
                 </div>
                 <div class="instructor-info">
