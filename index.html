@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">ff
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O Legado - Imersão em Vendas e Liderança</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-f
+    <title>O Legado - Transforme sua Empresa</title>
     <style>
         * {
             margin: 0;
@@ -13,928 +11,201 @@ f
             box-sizing: border-box;
         }
 
-      body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: #0a0a0a;
-    color: #ffffff;
-    line-height: 1.6;
-    overflow-x: hidden;
-    max-width: 100%;
-    width: 100%;
-}
-h1, h2, h3, h4 {
-    font-family: 'Montserrat', sans-serif;
-}
-   .container {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-        .section {
-            padding: 80px 0;
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1a1a1a;
+            color: white;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        .text-center {
-            text-align: center;
-        }
-
-        /* Header */
-        .header {
-                position: relative;
-            top: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 25px 0;
-            border-bottom: 2px solid #CC0000;
-        }
-
-        .header h1 {
-            font-size: 3rem;
-            font-weight: 900;
-            color: #CC0000;
-            text-shadow: 0 0 20px rgba(204, 0, 0, 0.5);
-            letter-spacing: 2px;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-            position: relative;
-            margin-top: 120px;
-        }
-
-        /* Animação da Faixa de Urgência */
-        .urgency-banner {
+        /* TARJA ANIMADA */
+        .marquee-banner {
             background: #CC0000;
             color: white;
-            padding: 20px 0;
-            
-            margin-bottom: 60px;
+            padding: 15px 0;
             font-weight: 700;
             font-size: 1.2rem;
-            position: relative;
             overflow: hidden;
-            
-            
-            box-shadow: 0 5px 25px rgba(204, 0, 0, 0.5);
+            white-space: nowrap;
+            width: 100vw;
+            margin: 0;
         }
 
-        .urgency-text {
+        .marquee-text {
             display: inline-block;
-            animation: scrollText 15s linear infinite;
-            white-space: nowrap;
+            animation: marquee 15s linear infinite;
             padding-left: 100%;
         }
 
-        @keyframes scrollText {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
+        @keyframes marquee {
+            0% { transform: translate3d(100%, 0, 0); }
+            100% { transform: translate3d(-100%, 0, 0); }
         }
 
-        .hero-content h1 {
+        /* HEADER */
+        .header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        }
+
+        .logo {
             font-size: 4rem;
             font-weight: 900;
-            margin-bottom: 30px;
-            color: #ffffff;
-        }
-
-        .hero-content .highlight {
             color: #CC0000;
-            text-shadow: 0 0 15px rgba(204, 0, 0, 0.6);
-        }
-
-        .hero-subtitle {
-            font-size: 1.4rem;
-            color: #cccccc;
             margin-bottom: 40px;
-            font-weight: 300;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
-        .event-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin: 50px 0;
-        }
-
-        .info-item {
+        .main-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
             text-align: center;
-            padding: 30px 20px;
-            background: rgba(204, 0, 0, 0.1);
-            border-radius: 15px;
-            border: 2px solid #CC0000;
-            transition: all 0.3s ease;
         }
 
-        .info-item:hover {
-            transform: translateY(-5px);
-            background: rgba(204, 0, 0, 0.2);
-            box-shadow: 0 10px 30px rgba(204, 0, 0, 0.4);
-        }
-
-        .info-item h3 {
+        .main-title .highlight {
             color: #CC0000;
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            font-weight: 700;
         }
 
-        .info-item p {
-            color: #cccccc;
-            font-weight: 500;
-        }
-
-        /* CTA Button */
-        .btn-primary {
-            display: inline-block;
-            background: linear-gradient(45deg, #CC0000, #FF0000);
-            color: white;
-            padding: 22px 55px;
+        .subtitle {
             font-size: 1.3rem;
+            color: #cccccc;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        /* CARDS PRINCIPAIS */
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+        }
+
+        .info-card {
+            background: rgba(30, 30, 30, 0.8);
+            border: 2px solid #CC0000;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(204, 0, 0, 0.3);
+            background: rgba(204, 0, 0, 0.1);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #CC0000;
+            margin-bottom: 10px;
+        }
+
+        .card-content {
+            font-size: 0.9rem;
+            color: #cccccc;
+        }
+
+        /* BOTÕES */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #CC0000, #ff1a1a);
+            color: white;
+            padding: 20px 40px;
+            font-size: 1.2rem;
             font-weight: 700;
             text-decoration: none;
-            border-radius: 10px;
+            border-radius: 50px;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            margin: 30px 0;
             text-transform: uppercase;
             letter-spacing: 1px;
-            box-shadow: 0 8px 25px rgba(204, 0, 0, 0.5);
+            box-shadow: 0 8px 25px rgba(204, 0, 0, 0.3);
         }
 
-        .btn-primary:hover {
-            background: linear-gradient(45deg, #FF0000, #CC0000);
+        .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(204, 0, 0, 0.7);
-        }
-
-        /* Sections */
-        .section-title {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 25px;
-            color: #ffffff;
-        }
-
-        .section-subtitle {
-            font-size: 1.3rem;
-            color: #cccccc;
-            margin-bottom: 50px;
-            font-weight: 300;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Quote Section - Ajustado */
-        .quote {
-            background: #111111;
-            text-align: center;
-            padding: 120px 0;
-        }
-
-        .quote-text {
-            font-size: 3.5rem;
-            font-weight: 400;
-            color: #CC0000;
-            font-style: italic;
-            max-width: 1000px;
-            margin: 0 auto;
-            line-height: 1.3;
-            text-shadow: 0 0 20px rgba(204, 0, 0, 0.3);
-        }
-
-        /* Photo Placeholder between sections */
-        .section-photo {
-            background: linear-gradient(135deg, #CC0000, #AA0000);
-            height: 400px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 40px 0 80px 0;
-            box-shadow: 0 20px 50px rgba(204, 0, 0, 0.4);
-        }
-
-        .section-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 20px;
-        }
-
-        .photo-placeholder {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-
-        /* Problems Section */
-        .problems {
-            background: #0a0a0a;
-        }
-
-        .problems-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-        }
-
-        .problem-card {
-            background: rgba(204, 0, 0, 0.08);
-            padding: 35px;
-            border-radius: 20px;
-            border-left: 5px solid #CC0000;
-            transition: all 0.3s ease;
-        }
-
-        .problem-card:hover {
-            background: rgba(204, 0, 0, 0.15);
-            transform: translateX(15px);
-        }
-
-        .problem-icon {
-            font-size: 3rem;
-            margin-bottom: 25px;
-            display: block;
-        }
-
-        .problem-card h3 {
-            color: #CC0000;
-            font-size: 1.4rem;
-            margin-bottom: 18px;
-            font-weight: 700;
-        }
-
-        .problem-card p {
-            color: #cccccc;
-            line-height: 1.7;
-        }
-
-        /* Features Section */
-        .why-different {
-            background: #111111;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
-
-        .feature-card {
-            background: rgba(204, 0, 0, 0.06);
-            padding: 45px 35px;
-            border-radius: 20px;
-            border: 2px solid #CC0000;
-            text-align: center;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            background: rgba(204, 0, 0, 0.12);
-            box-shadow: 0 20px 45px rgba(204, 0, 0, 0.4);
-        }
-
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(45deg, #CC0000, #FF0000);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 30px;
-            font-size: 2rem;
-            box-shadow: 0 8px 25px rgba(204, 0, 0, 0.5);
-        }
-
-        .feature-card h3 {
-            color: #CC0000;
-            font-size: 1.5rem;
-            margin-bottom: 22px;
-            font-weight: 700;
-        }
-
-        .feature-card p {
-            color: #cccccc;
-            line-height: 1.8;
-        }
-
-        /* Pillars Section */
-        .pillars {
-            background: #0a0a0a;
-        }
-
-        .pillar-item {
-            background: rgba(204, 0, 0, 0.06);
-            padding: 55px;
-            margin-bottom: 35px;
-            border-radius: 25px;
-            border: 3px solid #CC0000;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .pillar-item:hover {
-            background: rgba(204, 0, 0, 0.12);
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(204, 0, 0, 0.4);
-        }
-
-        .pillar-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(45deg, #CC0000, #FF0000);
-            color: white;
-            border-radius: 50%;
-            font-weight: 900;
-            font-size: 1.8rem;
-            margin-bottom: 30px;
-            box-shadow: 0 8px 25px rgba(204, 0, 0, 0.5);
-        }
-
-        .pillar-item h3 {
-            color: #CC0000;
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            font-weight: 700;
-        }
-
-        .pillar-item p {
-            color: #cccccc;
-            line-height: 1.8;
-            font-size: 1.15rem;
-        }
-
-        .learn-points {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 35px;
-        }
-
-        .learn-point {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            padding: 18px;
-            background: rgba(204, 0, 0, 0.1);
-            border-radius: 12px;
-        }
-
-        .learn-point::before {
-            content: "✓";
-            color: #CC0000;
-            font-weight: bold;
-            font-size: 1.3rem;
-        }
-
-        /* Instructor Section */
-        .instructor {
-            background: #111111;
-        }
-
-        .instructor-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 80px;
-            align-items: center;
-        }
-
-   .instructor-photo {
-    width: 100%;
-    height: 100%;
-    min-height: 600px;
-    border-radius: 15px;
-    overflow: hidden;
-    display: block;
-}
-
-.instructor-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top center;
-    display: block;
-    border-radius: 15px;
-}
-    height: 100%;
-    object-fit: cover;
-    object-position: top center;
-    display: block;
-    border-radius: 15px;
-}
-
-        .instructor-photo::after {
-            content: '';
-            position: absolute;
-            top: -12px;
-            left: -12px;
-            right: -12px;
-            bottom: -12px;
-            background: linear-gradient(45deg, #CC0000, #FF0000, #CC0000);
-            border-radius: 30px;
-            z-index: -1;
-            opacity: 0.3;
-        }
-
-        /* Placeholder para foto real */
-        .instructor-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 25px;
-        }
-
-        .instructor-info h3 {
-            font-size: 2.8rem;
-            color: #CC0000;
-            margin-bottom: 18px;
-            font-weight: 800;
-        }
-
-        .instructor-info .role {
-            color: #FF0000;
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-            font-weight: 600;
-        }
-
-        .instructor-info p {
-            color: #cccccc;
-            font-size: 1.15rem;
-            line-height: 1.8;
-            margin-bottom: 40px;
-        }
-
-        .credentials {
-            list-style: none;
-        }
-
-        .credentials li {
-            color: #cccccc;
-            margin-bottom: 18px;
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            padding: 15px;
-            background: rgba(204, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-
-        .credentials li::before {
-            content: "✓";
-            color: #CC0000;
-            font-weight: bold;
-            font-size: 1.3rem;
-        }
-
-        /* Bonus Section */
-        .bonus {
-            background: #0a0a0a;
-        }
-
-        .bonus-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 45px;
-            margin-top: 70px;
-        }
-
-        .bonus-card {
-            background: rgba(204, 0, 0, 0.06);
-            padding: 45px 35px;
-            border-radius: 25px;
-            border: 3px solid #CC0000;
-            text-align: center;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .bonus-card:hover {
-            transform: translateY(-12px);
-            background: rgba(204, 0, 0, 0.12);
-            box-shadow: 0 25px 60px rgba(204, 0, 0, 0.4);
-        }
-
-        .bonus-card .icon {
-            font-size: 3.5rem;
-            margin-bottom: 30px;
-            display: block;
-        }
-
-        .bonus-card h3 {
-            color: #CC0000;
-            font-size: 1.4rem;
-            margin-bottom: 25px;
-            font-weight: 700;
-        }
-
-        .bonus-card p {
-            color: #cccccc;
-            line-height: 1.7;
-        }
-
-        .bonus-value {
-            background: rgba(204, 0, 0, 0.2);
-            padding: 12px;
-            border-radius: 10px;
-            margin-top: 25px;
-            font-weight: 700;
-            color: #CC0000;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            background: #111111;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 45px;
-            margin-top: 70px;
-        }
-
-        .testimonial-card {
-            background: rgba(204, 0, 0, 0.06);
-            padding: 45px 35px;
-            border-radius: 25px;
-            border: 3px solid #CC0000;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-12px);
-            background: rgba(204, 0, 0, 0.12);
-            box-shadow: 0 25px 60px rgba(204, 0, 0, 0.4);
-        }
-
-        .testimonial-card::before {
-            content: '"';
-            font-size: 4.5rem;
-            color: #CC0000;
-            position: absolute;
-            top: 15px;
-            left: 25px;
-            line-height: 1;
-        }
-
-        .testimonial-content {
-            margin-top: 35px;
-            margin-bottom: 35px;
-        }
-
-        .testimonial-content p {
-            color: #cccccc;
-            font-style: italic;
-            line-height: 1.8;
-            font-size: 1.15rem;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-
-        .author-avatar {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(45deg, #CC0000, #FF0000);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 1.4rem;
-        }
-
-        .author-info strong {
-            display: block;
-            color: #ffffff;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .author-info span {
-            color: #CC0000;
-            font-size: 1rem;
-        }
-
-        /* Includes Section */
-        .includes {
-            background: #0a0a0a;
-        }
-
-        .includes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 35px;
-            margin-top: 60px;
-        }
-
-        .include-item {
-            background: rgba(204, 0, 0, 0.1);
-            padding: 35px;
-            border-radius: 20px;
-            text-align: center;
-            border: 3px solid #CC0000;
-            transition: all 0.3s ease;
-        }
-
-        .include-item:hover {
-            transform: translateY(-8px);
-            background: rgba(204, 0, 0, 0.2);
-        }
-
-        .include-item .icon {
-            font-size: 3rem;
-            margin-bottom: 25px;
-            display: block;
-        }
-
-        .include-item h3 {
-            color: #CC0000;
-            margin-bottom: 18px;
-            font-weight: 700;
-        }
-
-        /* FAQ */
-        .faq {
-            background: #111111;
-        }
-
-        .faq-item {
-            background: rgba(204, 0, 0, 0.06);
-            border: 3px solid #CC0000;
-            border-radius: 20px;
-            margin-bottom: 30px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .faq-item:hover {
-            box-shadow: 0 15px 40px rgba(204, 0, 0, 0.4);
-        }
-
-        .faq-question {
-            background: rgba(204, 0, 0, 0.2);
-            padding: 30px;
-            cursor: pointer;
-            font-weight: 700;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            transition: all 0.3s ease;
-        }
-
-        .faq-question:hover {
-            background: rgba(204, 0, 0, 0.3);
-        }
-
-        .faq-answer {
-            padding: 30px;
-            color: #cccccc;
-            line-height: 1.8;
-            border-top: 2px solid #CC0000;
-        }
-
-        /* Final CTA - AJUSTADO PARA FUNDO PRETO */
-        .final-cta {
-            background: #000000;
-            text-align: center;
-        }
-
-        .final-cta h2 {
-            color: #ffffff;
-            font-size: 3.2rem;
-            font-weight: 800;
-            margin-bottom: 30px;
-        }
-
-        .final-cta h2 span {
-            color: #CC0000;
-        }
-
-        .final-cta p {
-            color: #cccccc;
-            font-size: 1.4rem;
-            margin-bottom: 45px;
-            max-width: 750px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .btn-secondary {
-            background: #CC0000;
-            color: white;
-            padding: 28px 65px;
-            font-size: 1.4rem;
-            font-weight: 800;
-            text-decoration: none;
-            border-radius: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            display: inline-block;
-            box-shadow: 0 12px 35px rgba(204, 0, 0, 0.4);
-        }
-
-        .btn-secondary:hover {
-            background: #FF0000;
-            transform: translateY(-4px);
-            box-shadow: 0 18px 45px rgba(204, 0, 0, 0.6);
-        }
-
-        /* Footer */
-        .footer {
-            background: #000000;
-            padding: 70px 0;
-            text-align: center;
-            border-top: 3px solid #CC0000;
-        }
-
-        .footer p {
-            color: #666;
-            margin-bottom: 12px;
-        }
-
-        .footer h3 {
-            color: #CC0000;
-            margin-bottom: 25px;
-            font-size: 2rem;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-content h1 {
-                font-size: 2.8rem;
-            }
-
-            .section-title {
-                font-size: 2.5rem;
-            }
-
-            .quote-text {
-                font-size: 2.5rem;
-            }
-
-            .instructor-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 50px;
-            }
-
-            .instructor-photo {
-                width: 280px;
-                height: 350px;
-            }
-
-            .event-info {
-                grid-template-columns: 1fr;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .container {
-                padding: 0 15px;
-            }
-
-            .pillar-item {
-                padding: 35px;
-            }
-
-            .btn-primary, .btn-secondary {
-                padding: 20px 40px;
-                font-size: 1.2rem;
-            }
-
-            .urgency-text {
-                font-size: 2.8rem;
-           display: inline-block;
-animation: scrollText 15s linear infinite;
-white-space: nowrap;
-padding-left: 100%; }
-        }
-
-        /* Urgency Elements */
-        .urgency-text-bottom {
-            color: #CC0000;
-            font-weight: bold;
-            animation: blink 1.5s infinite;
-            margin-top: 30px;
-        }
-
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0.6; }
+            box-shadow: 0 15px 35px rgba(204, 0, 0, 0.5);
+            background: linear-gradient(135deg, #ff1a1a, #CC0000);
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- TARJA ANIMADA -->
+    <div class="marquee-banner">
+        <div class="marquee-text">
+            🔥 ATENÇÃO: COMPRE 1 INGRESSO E GANHE OUTRO GRÁTIS PARA SEU SÓCIO! 🔥 ATENÇÃO: COMPRE 1 INGRESSO E GANHE OUTRO GRÁTIS PARA SEU SÓCIO! 🔥
+        </div>
+    </div>
+
+    <!-- HEADER -->
     <header class="header">
-        <div class="container">
-            <div class="text-center">
-                <h1>O LEGADO</h1>
+        <h1 class="logo">O LEGADO</h1>
+        
+        <h2 class="main-title">
+            Transforme sua empresa em uma<br>
+            <span class="highlight">máquina de vendas</span>
+        </h2>
+        
+        <p class="subtitle">
+            A imersão completa que vai revolucionar seus resultados comerciais, estruturar seu time e multiplicar sua receita em apenas 2 dias intensivos
+        </p>
+
+        <!-- 4 CARDS PRINCIPAIS -->
+        <div class="info-cards">
+            <div class="info-card">
+                <span class="card-icon">📅</span>
+                <h3 class="card-title">QUANDO</h3>
+                <p class="card-content">11 e 12 de Setembro<br>2026</p>
+            </div>
+            
+            <div class="info-card">
+                <span class="card-icon">📍</span>
+                <h3 class="card-title">ONDE</h3>
+                <p class="card-content">Melhor localização<br>Fortaleza/CE</p>
+            </div>
+            
+            <div class="info-card">
+                <span class="card-icon">⚡</span>
+                <h3 class="card-title">FOCO</h3>
+                <p class="card-content">Espiritualidade + Família<br>+ Empreendedorismo</p>
+            </div>
+            
+            <div class="info-card">
+                <span class="card-icon">🎯</span>
+                <h3 class="card-title">RESULTADO</h3>
+                <p class="card-content">Transformação<br>Completa</p>
             </div>
         </div>
+
+        <a href="#inscricao" class="cta-button">GARANTIR MINHA VAGA AGORA</a>
     </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- SEÇÃO FOTO DO AUDITÓRIO -->
+    <section class="event-photo">
         <div class="container">
-            <div class="hero-content text-center">
-                <div class="urgency-banner">
-                    ATENÇÃO: COMPRE 1 INGRESSO E GANHE OUTRO GRÁTIS PARA SEU SÓCIO!
-                </div>
-
-                <h1>Transforme sua empresa em uma <span class="highlight">máquina de vendas</span></h1>
-                
-                <p class="hero-subtitle">
-                    A imersão completa que vai revolucionar seus resultados comerciais, estruturar seu time e multiplicar sua receita em apenas 2 dias intensivos
-                </p>
-
-                <div class="event-info">
-                    <div class="info-item">
-                        <h3>📅 QUANDO</h3>
-                        <p><strong>11 e 12 de Setembro</strong><br>2026</p>
-                    </div>
-                    <div class="info-item">
-                        <h3>📍 ONDE</h3>
-                        <p><strong>Melhor localização</strong><br>Fortaleza/CE</p>
-                    </div>
-                    <div class="info-item">
-                        <h3>⚡ FOCO</h3>
-                        <p><strong>Espiritualidade + Família</strong><br>+ Empreendedorismo</p>
-                    </div>
-                    <div class="info-item">
-                        <h3>🎯 RESULTADO</h3>
-                        <p><strong>Transformação</strong><br>Completa</p>
-                    </div>
-                </div>
-
-                <a href="https://wa.me/5585994376861?text=Nome:%20%7C%20Telefone:%20%7C%20Email:%20%7C%20Cargo:" class="btn-primary" target="_blank">
-                    GARANTIR MINHA VAGA AGORA
-                </a>
-
-               
-            </div>
+            <img src="caminho-para-sua-foto-auditorio.jpg" alt="Auditório do Evento O Legado" class="main-photo">
         </div>
     </section>
 
-    <!-- Photo Section Placeholder - Logo após o hero -->
-    <section class="section" style="padding-top: 40px;">
+    <!-- SEÇÃO PROBLEMAS EMPRESARIAIS -->
+    <section class="problems-section">
         <div class="container">
-            <div class="section-photo">
-                <!-- Aqui vai sua foto do evento -->
-                <!-- <img src="evento.jpg" alt="Evento O Legado"> -->
-                <div class="photo-placeholder">     <img src="images/minha-foto.jpg" alt="Foto do evento"> </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quote Section -->
-    <section class="quote">
-        <div class="container">
-        </div>
-    </section>
-
-    <!-- Problems Section -->
-    <section class="section problems">
-        <div class="container text-center">
-            <h2 class="section-title">Você está cansado de <span class="highlight">enfrentar isso?</span></h2>
+            <h2 class="section-title">Você está cansado de enfrentar isso?</h2>
             <p class="section-subtitle">
                 Problemas reais que todo empresário enfrenta e que impedem o crescimento do seu negócio
             </p>
@@ -942,290 +213,927 @@ padding-left: 100%; }
             <div class="problems-grid">
                 <div class="problem-card">
                     <span class="problem-icon">💰</span>
-                    <h3>Receita travada no mesmo patamar</h3>
-                    <p>Você trabalha incansavelmente, mas o faturamento não cresce proporcionalmente ao esforço investido.</p>
+                    <h3 class="problem-title">Receita travada no mesmo patamar</h3>
+                    <p class="problem-text">
+                        Você trabalha incansavelmente, mas o faturamento não cresce proporcionalmente ao esforço investido.
+                    </p>
                 </div>
+
                 <div class="problem-card">
                     <span class="problem-icon">⚠️</span>
-                    <h3>Equipe sem direcionamento claro</h3>
-                    <p>Seu time não tem processos definidos, cada um vende de um jeito e os resultados são inconsistentes.</p>
+                    <h3 class="problem-title">Equipe sem direcionamento claro</h3>
+                    <p class="problem-text">
+                        Seu time não tem processos definidos, cada um vende de um jeito e os resultados são inconsistentes.
+                    </p>
                 </div>
+
                 <div class="problem-card">
                     <span class="problem-icon">😰</span>
-                    <h3>Sempre apagando incêndios</h3>
-                    <p>Você vive resolvendo problemas operacionais e não tem tempo para focar no estratégico do negócio.</p>
+                    <h3 class="problem-title">Sempre apagando incêndios</h3>
+                    <p class="problem-text">
+                        Você vive resolvendo problemas operacionais e não tem tempo para focar no estratégico do negócio.
+                    </p>
                 </div>
+
                 <div class="problem-card">
                     <span class="problem-icon">📊</span>
-                    <h3>Decisões sem dados confiáveis</h3>
-                    <p>Falta clareza sobre métricas e indicadores, tomando decisões baseadas apenas na intuição.</p>
+                    <h3 class="problem-title">Decisões sem dados confiáveis</h3>
+                    <p class="problem-text">
+                        Falta clareza sobre métricas e indicadores, tomando decisões baseadas apenas na intuição.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Different Section -->
-    <section class="section why-different">
-        <div class="container text-center">
-            <h2 class="section-title">Por que essa <span class="highlight">formação é diferente</span></h2>
+    <!-- SEÇÃO POR QUE É DIFERENTE -->
+    <section class="why-different">
+        <div class="container">
+            <h2 class="section-title">Por que essa formação é diferente</h2>
             <p class="section-subtitle">
                 Não é cursinho online que você assiste e esquece. É formação prática, presencial, com acompanhamento, certificação e resultado real no seu bolso.
             </p>
 
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">✓</div>
-                    <h3>100% PRÁTICA E APLICÁVEL</h3>
-                    <p>Aprenda fazendo. Estudos de caso reais, simulações baseadas na realidade do mercado brasileiro e ferramentas que você implementa no mesmo dia.</p>
+                    <span class="feature-icon">✅</span>
+                    <h3 class="feature-title">100% PRÁTICA E APLICÁVEL</h3>
+                    <p class="feature-text">
+                        Aprenda fazendo. Estudos de caso reais, simulações, testando as realidades do mercado brasileiro e ferramentas que você implementa no mesmo dia.
+                    </p>
                 </div>
+
                 <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>FOCO EM RESULTADOS MENSURÁVEIS</h3>
-                    <p>Domine números e indicadores de verdade. Profissionais que dominam métricas e KPIs ganham até 3x mais e têm empresas mais lucrativas.</p>
+                    <span class="feature-icon">📈</span>
+                    <h3 class="feature-title">FOCO EM RESULTADOS MENSURÁVEIS</h3>
+                    <p class="feature-text">
+                        Estratégias baseadas em dados e verdade. Profissionais que dominam métricas e KPIs geram 3x mais resultados que empresas mais tradicionais.
+                    </p>
                 </div>
+
                 <div class="feature-card">
-                    <div class="feature-icon">👥</div>
-                    <h3>MENTORIA DE QUEM FAZ ACONTECER</h3>
-                    <p>Aprenda com quem vive a realidade comercial no dia a dia há 14 anos e compartilha experiências reais de transformação empresarial.</p>
+                    <span class="feature-icon">👨‍💼</span>
+                    <h3 class="feature-title">MENTORIA DE QUEM FAZ ACONTECER</h3>
+                    <p class="feature-text">
+                        Aprenda com quem vive a realidade comercial no dia a dia há 14 anos e compartilha experiências reais de transformação empresarial.
+                    </p>
                 </div>
+
                 <div class="feature-card">
-                    <div class="feature-icon">🛠️</div>
-                    <h3>FERRAMENTAS PROFISSIONAIS</h3>
-                    <p>Receba templates, planilhas, checklists e calculadoras prontas para usar. As mesmas ferramentas que empresas de sucesso utilizam.</p>
+                    <span class="feature-icon">🛠️</span>
+                    <h3 class="feature-title">FERRAMENTAS PROFISSIONAIS</h3>
+                    <p class="feature-text">
+                        Soluções completas: planilhas, modelos e templates para usar. As mesmas ferramentas que empresas de sucesso utilizam.
+                    </p>
                 </div>
+
                 <div class="feature-card">
-                    <div class="feature-icon">🧠</div>
-                    <h3>TRANSFORMAÇÃO MENTAL</h3>
-                    <p>Desenvolva a mentalidade de líder e a inteligência emocional necessária para tomar decisões assertivas sob pressão.</p>
+                    <span class="feature-icon">🧠</span>
+                    <h3 class="feature-title">TRANSFORMAÇÃO MENTAL</h3>
+                    <p class="feature-text">
+                        Desenvolva a mentalidade de líder e a inteligência emocional necessária para tomar decisões assertivas sob pressão.
+                    </p>
                 </div>
+
                 <div class="feature-card">
-                    <div class="feature-icon">🤝</div>
-                    <h3>NETWORKING ESTRATÉGICO</h3>
-                    <p>Conecte-se com outros empresários sérios que estão no mesmo caminho de crescimento e transformação dos seus negócios.</p>
+                    <span class="feature-icon">🤝</span>
+                    <h3 class="feature-title">NETWORKING ESTRATÉGICO</h3>
+                    <p class="feature-text">
+                        Conecte-se com outros empresários sérios que estão no mesmo caminho de crescimento e transformação dos seus negócios.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
+    <style>
+        /* CSS ADICIONAL PARA NOVAS SEÇÕES */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    <!-- 3 Pillars Section -->
-    <section class="section pillars">
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            text-align: center;
+            color: #cccccc;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* SEÇÃO FOTO */
+        .event-photo {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .main-photo {
+            width: 100%;
+            max-width: 900px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+
+        /* SEÇÃO PROBLEMAS */
+        .problems-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .problem-card {
+            background: rgba(30, 30, 30, 0.9);
+            border: 2px solid #CC0000;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(204, 0, 0, 0.4);
+            background: rgba(204, 0, 0, 0.1);
+        }
+
+        .problem-icon {
+            font-size: 4rem;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .problem-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #CC0000;
+            margin-bottom: 15px;
+        }
+
+        .problem-text {
+            color: #cccccc;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* SEÇÃO POR QUE É DIFERENTE */
+        .why-different {
+            padding: 80px 0;
+            background: #1a1a1a;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: rgba(30, 30, 30, 0.8);
+            border: 2px solid #CC0000;
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(204, 0, 0, 0.3);
+            background: rgba(204, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 3.5rem;
+            display: block;
+            margin-bottom: 20px;
+            color: #CC0000;
+        }
+
+        .feature-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #CC0000;
+            margin-bottom: 15px;
+        }
+
+        .feature-text {
+            color: #cccccc;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* SEÇÃO 3 PILARES */
+        .pillars-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+        }
+
+        .pillars-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .pillar-card {
+            background: rgba(30, 30, 30, 0.9);
+            border: 2px solid #CC0000;
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .pillar-card:hover {
+            transform: translateX(15px);
+            box-shadow: 0 20px 40px rgba(204, 0, 0, 0.4);
+            background: rgba(204, 0, 0, 0.1);
+        }
+
+        .pillar-number {
+            background: #CC0000;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .pillar-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #CC0000;
+            margin-bottom: 15px;
+        }
+
+        .pillar-description {
+            color: #cccccc;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .pillar-topics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .pillar-topic {
+            background: rgba(204, 0, 0, 0.1);
+            color: #cccccc;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            text-align: center;
+            border: 1px solid rgba(204, 0, 0, 0.3);
+        }
+
+        .center-button {
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+
+    <!-- SEÇÃO OS 3 PILARES -->
+    <section class="pillars-section">
         <div class="container">
-            <h2 class="section-title text-center">Os 3 <span class="highlight">Pilares</span> do Legado</h2>
-            <p class="section-subtitle text-center">
-                A metodologia completa e testada que vai transformar sua mentalidade, seus processos e multiplicar seus resultados
+            <h2 class="section-title">Os 3 Pilares do Legado</h2>
+            <p class="section-subtitle">
+                A metodologia completa e testada para transformar sua mentalidade, seus processos e multiplicar seus resultados
             </p>
 
-            <div class="pillar-item">
-                <div class="pillar-number">1</div>
-                <h3>Mentalidade e Inteligência Emocional</h3>
-                <p>Desenvolva a mentalidade vencedora e a inteligência emocional necessária para liderar equipes de alta performance, tomar decisões assertivas sob pressão e manter a consistência nos resultados mesmo em cenários desafiadores.</p>
-                
-                <div class="learn-points">
-                    <div class="learn-point">Controle emocional em negociações</div>
-                    <div class="learn-point">Liderança inspiradora de equipes</div>
-                    <div class="learn-point">Tomada de decisão estratégica</div>
-                    <div class="learn-point">Gestão de conflitos internos</div>
-                    <div class="learn-point">Mentalidade de abundância</div>
-                    <div class="learn-point">Resiliência empresarial</div>
+            <div class="pillars-container">
+                <div class="pillar-card">
+                    <div class="pillar-number">1</div>
+                    <h3 class="pillar-title">Mentalidade e Inteligência Emocional</h3>
+                    <p class="pillar-description">
+                        Desenvolva a mentalidade vencedora e a inteligência emocional necessária para liderar equipes de alta performance, tomar decisões sob pressão e construir relacionamentos comerciais duradouros.
+                    </p>
+                    <div class="pillar-topics">
+                        <span class="pillar-topic">Controle emocional em negociações</span>
+                        <span class="pillar-topic">Liderança inspiradora de equipes</span>
+                        <span class="pillar-topic">Tomada de decisão estratégica</span>
+                        <span class="pillar-topic">Gestão de conflitos internos</span>
+                        <span class="pillar-topic">Mentalidade de abundância</span>
+                        <span class="pillar-topic">Resiliência empresarial</span>
+                    </div>
+                </div>
+
+                <div class="pillar-card">
+                    <div class="pillar-number">2</div>
+                    <h3 class="pillar-title">Metodologia e Eliminação de Gargalos Comerciais</h3>
+                    <p class="pillar-description">
+                        Implemente sistemas comerciais eficazes e elimine definitivamente os gargalos que estão impedindo seu crescimento através de processos que geram resultado e aumentam o potencial de vendas.
+                    </p>
+                    <div class="pillar-topics">
+                        <span class="pillar-topic">Mapeamento de processos comerciais</span>
+                        <span class="pillar-topic">Identificação de pontos de melhoria</span>
+                        <span class="pillar-topic">Otimização do funil de vendas</span>
+                        <span class="pillar-topic">Automação de processos comerciais</span>
+                        <span class="pillar-topic">Descoberta de indicadores</span>
+                        <span class="pillar-topic">Qualificação eficiente de leads</span>
+                    </div>
+                </div>
+
+                <div class="pillar-card">
+                    <div class="pillar-number">3</div>
+                    <h3 class="pillar-title">Indicadores de Performance e KPIs Estratégicos</h3>
+                    <p class="pillar-description">
+                        Domine métricas, implemente acompanhamentos dos indicadores críticos que vão transformar seu processo de tomada de decisões baseadas em dados reais, deixando a intuição de lado e focando em métricas reais.
+                    </p>
+                    <div class="pillar-topics">
+                        <span class="pillar-topic">KPIs de vendas essenciais</span>
+                        <span class="pillar-topic">Métricas de produtividade</span>
+                        <span class="pillar-topic">Análise de performance individual</span>
+                        <span class="pillar-topic">Dashboard profissional</span>
+                        <span class="pillar-topic">Previsibilidade de resultados</span>
+                        <span class="pillar-topic">ROI e lucratividade</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="pillar-item">
-                <div class="pillar-number">2</div>
-                <h3>Identificação e Eliminação de Gargalos Comerciais</h3>
-                <p>Aprenda a identificar com precisão cirúrgica e eliminar definitivamente os principais gargalos que estão travando o crescimento do seu negócio e impedindo sua equipe de alcançar o máximo potencial de vendas.</p>
-                
-                <div class="learn-points">
-                    <div class="learn-point">Mapeamento de processos comerciais</div>
-                    <div class="learn-point">Identificação de pontos de travamento</div>
-                    <div class="learn-point">Otimização do funil de vendas</div>
-                    <div class="learn-point">Automação de processos repetitivos</div>
-                    <div class="learn-point">Estruturação de follow-up</div>
-                    <div class="learn-point">Qualificação eficiente de leads</div>
-                </div>
-            </div>
-
-            <div class="pillar-item">
-                <div class="pillar-number">3</div>
-                <h3>Indicadores de Performance e KPIs Estratégicos</h3>
-                <p>Domine a criação, implementação e acompanhamento dos indicadores certos que vão transformar sua gestão de dados em insights poderosos e acelerar exponencialmente seus resultados comerciais através de decisões baseadas em métricas reais.</p>
-                
-                <div class="learn-points">
-                    <div class="learn-point">KPIs de vendas essenciais</div>
-                    <div class="learn-point">Métricas de produtividade</div>
-                    <div class="learn-point">Análise de performance individual</div>
-                    <div class="learn-point">Dashboards profissionais</div>
-                    <div class="learn-point">Previsibilidade de resultados</div>
-                    <div class="learn-point">ROI e lucratividade</div>
-                </div>
-            </div>
-
-            <div class="text-center" style="margin-top: 60px;">
-                <a href="https://wa.me/5585994376861?text=Nome:%20%7C%20Telefone:%20%7C%20Email:%20%7C%20Cargo:" class="btn-primary" target="_blank">
-                    QUERO DOMINAR OS 3 PILARES
-                </a>
+            <div class="center-button">
+                <a href="#inscricao" class="cta-button">QUERO DOMINAR OS 3 PILARES</a>
             </div>
         </div>
     </section>
-
-    <!-- Instructor Section -->
-    <section class="section instructor">
+   <!-- SEÇÃO BRENO GUIMARÃES -->
+    <section class="mentor-section">
         <div class="container">
-            <div class="instructor-content" style="display: flex; align-items: stretch; min-height: 600px;">
-<div class="instructor-photo" style="flex: 0 0 45%; max-width: 45%; min-height: 600px; overflow: hidden; border-radius: 15px;">
-    <img src="images/IMG_8312.JPG.jpeg" alt="Foto do Breno" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; border-radius: 15px;">
-                    <!-- <img src="breno.jpg" alt="Breno Guimarães"> -->
+            <div class="mentor-content">
+                <div class="mentor-image">
+                    <img src="caminho-para-foto-breno.jpg" alt="Breno Guimarães" class="breno-photo">
                 </div>
-                <div class="instructor-info">
-                    <h3>Breno Guimarães</h3>
-                    <p class="role">Especialista em Vendas e Liderança Empresarial</p>
-                    <p>Cristão, pai, esposo e especialista em vendas e desenvolvimento pessoal com foco em vendas, inteligência emocional e estruturação de times comerciais. Com mais de <strong>14 anos de experiência</strong> transformando empresas e vidas, já impactou centenas de empresários em todo o Brasil.</p>
+                
+                <div class="mentor-info">
+                    <h2 class="mentor-name">Breno Guimarães</h2>
+                    <h3 class="mentor-title">Especialista em Vendas e Liderança Empresarial</h3>
                     
-                    <ul class="credentials">
-                        <li>Especialista em Vendas e Desenvolvimento Pessoal</li>
-                        <li>Expert em Inteligência Emocional aplicada às Vendas</li>
-                        <li>Especialista em Estruturação de Times Comerciais</li>
-                        <li>Mais de 14 anos transformando empresários</li>
-                        <li>Centenas de empresas impactadas</li>
-                        <li>Metodologia própria comprovada</li>
-                    </ul>
+                    <p class="mentor-description">
+                        Cristão, pai, esposo e especialista em vendas e desenvolvimento pessoal com foco em vendas, inteligência emocional e estruturação de times comerciais. Com mais de 14 anos de experiência transformando empresas e vidas, já impactou centenas de empresários em todo o Brasil.
+                    </p>
+                    
+                    <div class="mentor-achievements">
+                        <div class="achievement-item">
+                            ✓ Especialista em Vendas e Desenvolvimento Pessoal
+                        </div>
+                        <div class="achievement-item">
+                            ✓ Expert em Inteligência Emocional aplicada às Vendas
+                        </div>
+                        <div class="achievement-item">
+                            ✓ Especialista em Estruturação de Times Comerciais
+                        </div>
+                        <div class="achievement-item">
+                            ✓ Mais de 14 anos transformando empresários
+                        </div>
+                        <div class="achievement-item">
+                            ✓ Centenas de empresas impactadas
+                        </div>
+                        <div class="achievement-item">
+                            ✓ Metodologia própria comprovada
+                        </div>
+                    </div>
+                    
+                    <div class="mentor-cta">
+                        <a href="#contato" class="cta-button">QUERO FALAR COM O MENTOR</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- What's Included Section -->
-    <section class="section includes">
-        <div class="container text-center">
-            <h2 class="section-title">O que está <span class="highlight">incluído</span> na imersão</h2>
+    <!-- SEÇÃO O QUE ESTÁ INCLUÍDO -->
+    <section class="included-section">
+        <div class="container">
+            <h2 class="section-title">O que está incluído na imersão</h2>
             <p class="section-subtitle">
                 Experiência completa presencial com toda a estrutura necessária para sua transformação
             </p>
 
-            <div class="includes-grid">
-                <div class="include-item">
-                    <span class="icon">☕</span>
-                    <h3>Coffee Break Premium</h3>
-                    <p>Durante os 2 dias, com coffee break manhã e tarde</p>
+            <div class="included-grid">
+                <div class="included-card">
+                    <span class="included-icon">☕</span>
+                    <h3 class="included-title">Coffee Break Premium</h3>
+                    <p class="included-text">
+                        Durante os 2 dias, com coffee break manhã e tarde
+                    </p>
                 </div>
-                <div class="include-item">
-                    <span class="icon">📚</span>
-                    <h3>Material Físico Completo</h3>
-                    <p>Apostila exclusiva, templates impressos e material de apoio profissional</p>
+
+                <div class="included-card">
+                    <span class="included-icon">📚</span>
+                    <h3 class="included-title">Material Físico Completo</h3>
+                    <p class="included-text">
+                        Apostila exclusiva, templates impressos e material de apoio profissional
+                    </p>
                 </div>
-                <div class="include-item">
-                    <span class="icon">🏆</span>
-                    <h3>Certificado de Participação</h3>
-                    <p>Certificado oficial de conclusão da Imersão O Legado</p>
+
+                <div class="included-card">
+                    <span class="included-icon">🏆</span>
+                    <h3 class="included-title">Certificado de Participação</h3>
+                    <p class="included-text">
+                        Certificado oficial de conclusão da Imersão O Legado
+                    </p>
                 </div>
-                <div class="include-item">
-                    <span class="icon">🤝</span>
-                    <h3>Networking Exclusivo</h3>
-                    <p>Almoço especial com networking estratégico (apenas ingresso Black)</p>
+
+                <div class="included-card">
+                    <span class="included-icon">🤝</span>
+                    <h3 class="included-title">Networking Exclusivo</h3>
+                    <p class="included-text">
+                        Almoço especial com networking estratégico (apenas ingresso Black)
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Bonus Section -->
-    <section class="section bonus">
-        <div class="container text-center">
-            <h2 class="section-title">Bônus <span class="highlight">Exclusivos</span></h2>
+    <style>
+        /* CSS PARA SEÇÃO MENTOR */
+        .mentor-section {
+            padding: 80px 0;
+            background: #1a1a1a;
+        }
+
+        .mentor-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .mentor-image {
+            text-align: center;
+        }
+
+        .breno-photo {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(204, 0, 0, 0.3);
+        }
+
+        .mentor-name {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #CC0000;
+            margin-bottom: 10px;
+        }
+
+        .mentor-title {
+            font-size: 1.3rem;
+            color: #cccccc;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .mentor-description {
+            font-size: 1.1rem;
+            color: #cccccc;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .mentor-achievements {
+            margin-bottom: 30px;
+        }
+
+        .achievement-item {
+            color: #cccccc;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            padding-left: 10px;
+        }
+
+        .mentor-cta {
+            margin-top: 30px;
+        }
+
+        /* CSS PARA SEÇÃO INCLUÍDO */
+        .included-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+        }
+
+        .included-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .included-card {
+            background: rgba(30, 30, 30, 0.9);
+            border: 2px solid #CC0000;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .included-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(204, 0, 0, 0.4);
+            background: rgba(204, 0, 0, 0.1);
+        }
+
+        .included-icon {
+            font-size: 4rem;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .included-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #CC0000;
+            margin-bottom: 15px;
+        }
+
+        .included-text {
+            color: #cccccc;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            .mentor-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .mentor-name {
+                font-size: 2.2rem;
+            }
+            
+            .main-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+    <!-- SEÇÃO BÔNUS EXCLUSIVOS -->
+    <section class="bonus-section">
+        <div class="container">
+            <h2 class="section-title">Bônus Exclusivos</h2>
             <p class="section-subtitle">
                 Além da imersão completa, você vai receber estes materiais exclusivos para acelerar sua implementação e garantir resultados imediatos
             </p>
 
             <div class="bonus-grid">
                 <div class="bonus-card">
-                    <span class="icon">📋</span>
-                    <h3>Template de Processo Comercial</h3>
-                    <p>Passo a passo detalhado para estruturar todo o processo comercial da sua empresa de forma profissional e escalável. Planilha completa com todas as etapas do funil de vendas.</p>
-                    <div class="bonus-value">Valor: R$ 497</div>
-                </div>
-                <div class="bonus-card">
-                    <span class="icon">🎯</span>
-                    <h3>Checklist de Estruturação de Time</h3>
-                    <p>Guia prático com todos os pontos essenciais para montar, treinar e gerenciar uma equipe comercial de alta performance. Inclui scripts de entrevistas e avaliações.</p>
+                    <span class="bonus-icon">📄</span>
+                    <h3 class="bonus-title">Template de Processo Comercial</h3>
+                    <p class="bonus-text">
+                        Template completo para estruturar todo o processo comercial da sua empresa da forma profissional e escalável. Planilha completa com todas as etapas do funil de vendas.
+                    </p>
                     <div class="bonus-value">Valor: R$ 397</div>
                 </div>
+
                 <div class="bonus-card">
-                    <span class="icon">💰</span>
-                    <h3>Calculator de Meta e Comissão</h3>
-                    <p>Ferramenta exclusiva em Excel para calcular metas realistas e estruturar um plano de comissionamento que motiva resultados e alinha interesses da empresa e vendedores.</p>
+                    <span class="bonus-icon">🎯</span>
+                    <h3 class="bonus-title">Checklist de Estruturação de Time</h3>
+                    <p class="bonus-text">
+                        Checklist completo e prático para montar, treinar e gerenciar uma equipe comercial de alta performance. Inclui scripts de entrevistas e avaliações.
+                    </p>
                     <div class="bonus-value">Valor: R$ 297</div>
                 </div>
+
                 <div class="bonus-card">
-                    <span class="icon">📱</span>
-                    <h3>Grupo VIP - 30 Dias</h3>
-                    <p>30 dias de acesso exclusivo ao grupo de networking com outros participantes, suporte direto, acompanhamento pós-evento e sessões de dúvidas com Breno Guimarães.</p>
+                    <span class="bonus-icon">🧮</span>
+                    <h3 class="bonus-title">Calculadora de Metas e Comissões</h3>
+                    <p class="bonus-text">
+                        Ferramenta exclusiva em Excel para calcular metas realistas e estruturar um plano de comissionamento que motive sua equipe e aumente a lucratividade.
+                    </p>
+                    <div class="bonus-value">Valor: R$ 497</div>
+                </div>
+
+                <div class="bonus-card">
+                    <span class="bonus-icon">📱</span>
+                    <h3 class="bonus-title">Grupo VIP - 30 Dias</h3>
+                    <p class="bonus-text">
+                        30 dias de acesso ao grupo exclusivo de networking com outros participantes, suporte direto, acompanhamento pós-evento e sessões de dúvidas com Breno Guimarães.
+                    </p>
                     <div class="bonus-value">Valor: R$ 597</div>
                 </div>
             </div>
 
-            <div style="margin-top: 50px; padding: 35px; background: rgba(204, 0, 0, 0.15); border-radius: 20px; border: 3px solid #CC0000;">
-                <h3 style="color: #CC0000; margin-bottom: 25px; font-size: 1.8rem;">TOTAL EM BÔNUS: R$ 1.788</h3>
-                <p style="color: #cccccc; font-size: 2.5rem;">Você recebe tudo isso GRATUITAMENTE ao garantir sua vaga na imersão!</p>
+            <div class="total-bonus">
+                <div class="total-card">
+                    <h3 class="total-title">TOTAL EM BÔNUS: R$ 1.788</h3>
+                    <p class="total-text">
+                        Você recebe tudo isso GRATUITAMENTE ao garantir sua vaga na imersão!
+                    </p>
+                </div>
+            </div>
+
+            <div class="center-button">
+                <a href="#inscricao" class="cta-button">QUERO GARANTIR MEUS BÔNUS</a>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="section testimonials">
-        <div class="container text-center">
-            <h2 class="section-title">Depoimentos de quem <span class="highlight">já transformou</span></h2>
+    <!-- SEÇÃO PERGUNTAS FREQUENTES -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Perguntas Frequentes</h2>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Preciso ter experiência prévia em vendas para participar?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Não precisa ter experiência prévia. Nossa metodologia foi desenvolvida para capacitar desde quem quer iniciar no mercado de vendas até a empresário experiente que deseja estruturar melhor o comercial da empresa. O conteúdo é adaptado para todos os níveis.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>A imersão serve para qualquer segmento de mercado?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim, funciona para todos os segmentos e todos os tipos de empresários que sentem que existe espaço dirigentes incluindo e precisam de mais tempo de qualidade para focar na estratégia do negócio. Os princípios são universais e aplicáveis a qualquer área.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Como é a estrutura e localização do evento?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>O evento será realizado no melhor auditório de Fortaleza com estrutura completa, auditório climatizado, equipamentos audiovisuais de ponta, coffee break, material físico e toda a logística necessária para uma experiência premium de aprendizado.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Vou realmente conseguir implementar o que aprender?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim! Todo o conteúdo é 100% prático e aplicável. Você sai com templates prontos, checklists detalhados e um plano de ação claro para implementar imediatamente. Além disso, terá 30 dias de suporte no grupo VIP para tirar dúvidas durante a implementação.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>E se eu não conseguir participar presencialmente?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>A imersão é exclusivamente presencial para garantir máximo aproveitamento, networking real e experiência completa. Por isso, certifique-se da disponibilidade nas datas antes de garantir sua vaga.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* CSS PARA SEÇÃO BÔNUS */
+        .bonus-section {
+            padding: 80px 0;
+            background: #1a1a1a;
+        }
+
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .bonus-card {
+            background: rgba(30, 30, 30, 0.9);
+            border: 2px solid #CC0000;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .bonus-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(204, 0, 0, 0.4);
+            background: rgba(204, 0, 0, 0.1);
+        }
+
+        .bonus-icon {
+            font-size: 4rem;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .bonus-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #CC0000;
+            margin-bottom: 15px;
+        }
+
+        .bonus-text {
+            color: #cccccc;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .bonus-value {
+            background: #CC0000;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .total-bonus {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .total-card {
+            background: rgba(204, 0, 0, 0.1);
+            border: 2px solid #CC0000;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .total-title {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #CC0000;
+            margin-bottom: 10px;
+        }
+
+        .total-text {
+            font-size: 1.2rem;
+            color: #cccccc;
+        }
+
+        /* CSS PARA FAQ */
+        .faq-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: rgba(30, 30, 30, 0.9);
+            border: 2px solid #CC0000;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 8px 25px rgba(204, 0, 0, 0.3);
+        }
+
+        .faq-question {
+            padding: 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(204, 0, 0, 0.1);
+        }
+
+        .faq-question h3 {
+            font-size: 1.2rem;
+            color: #CC0000;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: #CC0000;
+            font-weight: 700;
+        }
+
+        .faq-answer {
+            padding: 0 25px 25px 25px;
+            display: none;
+        }
+
+        .faq-answer p {
+            color: #cccccc;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+    </style>
+    <!-- SEÇÃO DEPOIMENTOS -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Depoimentos de quem já transformou</h2>
             <p class="section-subtitle">
                 Veja os resultados reais de empresários que participaram das imersões anteriores
             </p>
-            
+
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>Fazer a imersão foi um divisor de águas na minha empresa. Antes estava errando com coisas simples e agora tenho um processo claro, time de alta performance e estamos com metas batidas consistentemente. Indico muito para qualquer empresário sério!</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">PG</div>
-                        <div class="author-info">
-                            <strong>Paulo Gurgel</strong>
-                            <span>Empreendedor Digital</span>
+                        <p class="testimonial-text">
+                            "Cara, o Breno mudou completamente a forma como eu enxergo minha empresa. Antes estava sempre correndo atrás dos problemas, agora tenho um processo claro, time de alta performance e estamos com metas batidas constantemente. Indico muito para qualquer empresário sério!"
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">PG</div>
+                            <div class="author-info">
+                                <h4 class="author-name">Paulo Gurgel</h4>
+                                <p class="author-company">Empresário do Varejo</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>A imersão foi um divisor de águas no meu negócio. Antes estava errando com coisas básicas e agora tenho um processo claro, equipe de alta performance e estamos batendo todas as metas mês após mês. Indico demais, vale cada centavo investido!</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">CS</div>
-                        <div class="author-info">
-                            <strong>Camila Santos</strong>
-                            <span>Empreendedora Digital</span>
+                        <p class="testimonial-text">
+                            "Participei da imersão há um ano e posso dizer que foi um divisor de águas no meu negócio. Antes estava errando com coisas básicas e agora tenho um processo claro, equipe de alta performance e estamos batendo todas as metas mês após mês. Indico fortemente para qualquer empresário!"
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">CS</div>
+                            <div class="author-info">
+                                <h4 class="author-name">Camila Santos</h4>
+                                <p class="author-company">Empresária e-commerce</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>Participar da imersão foi um divisor de águas para minha empresa. Antes cometia erros simples e agora tenho processos claros, time de alta performance e metas sendo superadas constantemente. Recomendo muito para quem quer crescer de verdade!</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">LM</div>
-                        <div class="author-info">
-                            <strong>Lucas Mascarenhas</strong>
-                            <span>Mascarenhas Imports</span>
+                        <p class="testimonial-text">
+                            "Participei da imersão e posso falar: foi um divisor de águas para minha empresa. Antes cometia erros simples e agora tenho processos claros, time de alta performance e metas sendo superadas constantemente. Recomendo muito para quem quer crescer de verdade!"
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">LM</div>
+                            <div class="author-info">
+                                <h4 class="author-name">Lucas Mascarenhas</h4>
+                                <p class="author-company">Empresário do Varejo</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>A imersão foi um divisor de águas na minha clínica. Antes estava errando em questões simples e agora tenho processos definidos, equipe de alta performance e estamos superando todas as metas. Indico fortemente para qualquer empresário!</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">PS</div>
-                        <div class="author-info">
-                            <strong>Dr. Paulo Silvânio</strong>
-                            <span>Clínica Dr. Silvânio</span>
+                        <p class="testimonial-text">
+                            "A imersão foi um divisor de águas na minha clínica. Antes estava errando em questões simples e agora tenho processos definidos, equipe de alta performance e estamos superando todas as metas. Indico fortemente para qualquer empresário!"
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">PS</div>
+                            <div class="author-info">
+                                <h4 class="author-name">Dr. Paulo Silvano</h4>
+                                <p class="author-company">Diretor de Clínica</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1233,87 +1141,249 @@ padding-left: 100%; }
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="section faq">
+    <!-- SEÇÃO CTA FINAL -->
+    <section class="final-cta">
         <div class="container">
-            <h2 class="section-title text-center">Perguntas <span class="highlight">Frequentes</span></h2>
-            
-            <div style="max-width: 900px; margin: 50px auto 0;">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span style="color: #CC0000; font-size: 1.2rem;">▶</span>
-                        Preciso ter experiência prévia em vendas para participar?
-                    </div>
-                    <div class="faq-answer">
-                        Não precisa ter experiência prévia. Nossa metodologia foi desenvolvida para capacitar desde quem quer iniciar no mercado de vendas até o empresário experiente que deseja estruturar melhor o comercial da empresa. O conteúdo é adaptado para todos os níveis.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span style="color: #CC0000; font-size: 1.2rem;">▶</span>
-                        A imersão serve para qualquer segmento de mercado?
-                    </div>
-                    <div class="faq-answer">
-                        Sim, funciona para todos os segmentos e todos os tipos de empresários que sentem que estão sempre apagando incêndio e precisam de mais tempo de qualidade para focar no estratégico do negócio. Os princípios são universais e aplicáveis a qualquer área.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span style="color: #CC0000; font-size: 1.2rem;">▶</span>
-                        Como é a estrutura e localização do evento?
-                    </div>
-                    <div class="faq-answer">
-                        O evento será realizado no melhor endereço de Fortaleza com estrutura completa: auditório climatizado, equipamentos audiovisuais de ponta, coffee break, material físico e toda a logística necessária para uma experiência premium de aprendizado.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span style="color: #CC0000; font-size: 1.2rem;">▶</span>
-                        Vou realmente conseguir implementar o que aprender?
-                    </div>
-                    <div class="faq-answer">
-                        Sim! Todo o conteúdo é 100% prático e aplicável. Você sai com templates prontos, checklists detalhados e um plano de ação claro para implementar imediatamente. Além disso, terá 30 dias de suporte no grupo VIP para tirar dúvidas durante a implementação.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span style="color: #CC0000; font-size: 1.2rem;">▶</span>
-                        E se eu não conseguir participar presencialmente?
-                    </div>
-                    <div class="faq-answer">
-                        A imersão é exclusivamente presencial para garantir máximo aproveitamento, networking real e experiência completa. Por isso, certifique-se da disponibilidade nas datas antes de garantir sua vaga.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA Section - FUNDO PRETO -->
-    <section class="final-cta section">
-        <div class="container">
-            <h2>Sua transformação começa <span>HOJE</span></h2>
-            <p>
+            <h2 class="final-title">
+                Sua transformação começa <span class="highlight">HOJE</span>
+            </h2>
+            <p class="final-subtitle">
                 Não deixe para depois. As vagas são limitadas e esta pode ser sua única chance de participar da imersão que vai revolucionar sua empresa, estruturar seu time e multiplicar sua receita. Centenas de empresários já transformaram suas realidades.
             </p>
             
-            <a href="https://wa.me/5585994376861?text=Nome:%20%7C%20Telefone:%20%7C%20Email:%20%7C%20Cargo:" class="btn-secondary" target="_blank">
-                GARANTIR MINHA VAGA AGORA
-            </a>
+            <div class="final-cta-button">
+                <a href="#inscricao" class="cta-button mega-button">GARANTIR MINHA VAGA AGORA</a>
+            </div>
+
+            <div class="final-guarantee">
+                <h3 class="guarantee-title">O LEGADO</h3>
+                <p class="guarantee-text">
+                    Compromisso empresarial através da espiritualidade, prosperidade e excelência.<br>
+                    Uma única imersão pode transformar toda a trajetória da sua empresa.<br>
+                    11 e 12 de Setembro - Fortaleza/CE<br>
+                    Você já decidiu participar
+                </p>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <h3>O LEGADO</h3>
-            <p>Transformando empresários através da mentalidade, processos e resultados.</p>
-            <p style="margin-top: 25px;">Especialização em Vendas • Liderança • Inteligência Emocional</p>
-            <p>© 2026 O Legado. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+    <style>
+        /* CSS PARA DEPOIMENTOS */
+        .testimonials-section {
+            padding: 80px 0;
+            background: #1a1a1a;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: rgba(30, 30, 30, 0.9);
+            border: 2px solid #CC0000;
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(204, 0, 0, 0.4);
+            background: rgba(204, 0, 0, 0.1);
+        }
+
+        .testimonial-text {
+            color: #cccccc;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: #CC0000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .author-name {
+            color: #CC0000;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .author-company {
+            color: #cccccc;
+            font-size: 0.9rem;
+        }
+
+        /* CSS PARA CTA FINAL */
+        .final-cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            text-align: center;
+        }
+
+        .final-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 25px;
+            color: white;
+        }
+
+        .final-subtitle {
+            font-size: 1.3rem;
+            color: #cccccc;
+            max-width: 900px;
+            margin: 0 auto 50px;
+            line-height: 1.7;
+        }
+
+        .final-cta-button {
+            margin-bottom: 50px;
+        }
+
+        .mega-button {
+            font-size: 1.5rem;
+            padding: 25px 50px;
+            box-shadow: 0 15px 40px rgba(204, 0, 0, 0.4);
+        }
+
+        .mega-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(204, 0, 0, 0.6);
+        }
+
+        .final-guarantee {
+            background: rgba(204, 0, 0, 0.1);
+            border: 2px solid #CC0000;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .guarantee-title {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #CC0000;
+            margin-bottom: 20px;
+        }
+
+        .guarantee-text {
+            color: #cccccc;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* RESPONSIVO ADICIONAL */
+        @media (max-width: 768px) {
+            .final-title {
+                font-size: 2.5rem;
+            }
+            
+            .mega-button {
+                font-size: 1.2rem;
+                padding: 20px 35px;
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // FAQ Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Fechar todos os itens
+                    faqItems.forEach(otherItem => {
+                        otherItem.classList.remove('active');
+                    });
+                    
+                    // Abrir o item clicado se não estava ativo
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // Smooth scroll para botões CTA
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctaButtons = document.querySelectorAll('a[href="#inscricao"], a[href="#contato"]');
+            
+            ctaButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Aqui você pode redirecionar para sua página de inscrição
+                    // Por enquanto, vou mostrar um alert
+                    if (this.href.includes('#inscricao')) {
+                        alert('Redirecionando para página de inscrição...');
+                        // window.location.href = 'https://sua-pagina-de-inscricao.com';
+                    } else if (this.href.includes('#contato')) {
+                        alert('Redirecionando para WhatsApp do mentor...');
+                        // window.open('https://wa.me/5585999999999', '_blank');
+                    }
+                });
+            });
+        });
+
+        // Animação nos cards ao fazer scroll
+        function animateOnScroll() {
+            const cards = document.querySelectorAll('.problem-card, .feature-card, .pillar-card, .included-card, .bonus-card, .testimonial-card');
+            
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                const cardVisible = 150;
+                
+                if (cardTop < window.innerHeight - cardVisible) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Inicializar animações
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.problem-card, .feature-card, .pillar-card, .included-card, .bonus-card, .testimonial-card');
+            
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(50px)';
+                card.style.transition = 'all 0.6s ease';
+            });
+            
+            animateOnScroll();
+            window.addEventListener('scroll', animateOnScroll);
+        });
+    </script>
 </body>
 </html>
